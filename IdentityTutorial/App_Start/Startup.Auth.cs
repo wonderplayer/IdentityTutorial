@@ -58,11 +58,10 @@ namespace IdentityTutorial
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions() {
+                ClientId = "1049780631773-c0tde80u0k0hmh70m7v2iojt7hb8ussj.apps.googleusercontent.com",
+                ClientSecret = "L5ItgnW5qLMPFJWQQw10QeZo"
+            });
         }
     }
 }

@@ -1,0 +1,13 @@
+﻿@model IEnumerable<IdentityTutorial.Models.ApplicationUser>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@foreach (var val in Model) {
+
+    <p>@val.UserName.ToString()</p>
+    
+
+}
