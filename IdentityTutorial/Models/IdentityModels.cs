@@ -5,10 +5,12 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace IdentityTutorial.Models
-{
+{ 
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        public int Age { get; set; } // добавляем свойство Age
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -18,8 +20,18 @@ namespace IdentityTutorial.Models
         }
     }
 
+    // добавляем модель Book
+    public class Book
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Author { get; set; }
+    }
+
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Book> Books { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

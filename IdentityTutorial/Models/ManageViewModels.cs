@@ -7,6 +7,7 @@ namespace IdentityTutorial.Models
 {
     public class IndexViewModel
     {
+        public int Age { get; set; }
         public bool HasPassword { get; set; }
         public IList<UserLoginInfo> Logins { get; set; }
         public string PhoneNumber { get; set; }
